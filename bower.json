@@ -1,0 +1,23 @@
+{
+  "name": "app",
+  "authors": [
+    "Max Spassky <maxspas1@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/libs/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "zepto": "~1.2.0",
+    "jquery": "latest",
+    "normalize.sass": "^3.0.0"
+  }
+}
