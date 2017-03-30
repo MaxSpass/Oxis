@@ -1,0 +1,101 @@
+.sprite {
+    background-image: url(../img/sprite.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-header_white {
+    width: 26px;
+    height: 26px;
+    background-position: 0 0;
+}
+
+.sprite-heart_red {
+    width: 26px;
+    height: 26px;
+    background-position: -26px 0;
+}
+
+.sprite-ico_coffe {
+    width: 26px;
+    height: 26px;
+    background-position: -52px 0;
+}
+
+.sprite-ico_fb {
+    width: 167px;
+    height: 56px;
+    background-position: 0 -26px;
+}
+
+.sprite-ico_google {
+    width: 56px;
+    height: 40px;
+    background-position: 0 -82px;
+}
+
+.sprite-ico_inst {
+    width: 56px;
+    height: 40px;
+    background-position: -56px -82px;
+}
+
+.sprite-ico_kievstar {
+    width: 20px;
+    height: 20px;
+    background-position: -78px 0;
+}
+
+.sprite-ico_life {
+    width: 20px;
+    height: 20px;
+    background-position: -98px 0;
+}
+
+.sprite-ico_music {
+    width: 26px;
+    height: 26px;
+    background-position: -118px 0;
+}
+
+.sprite-ico_phone_blue {
+    width: 20px;
+    height: 20px;
+    background-position: -144px 0;
+}
+
+.sprite-ico_phone_red {
+    width: 25px;
+    height: 25px;
+    background-position: -112px -82px;
+}
+
+.sprite-ico_skype {
+    width: 26px;
+    height: 26px;
+    background-position: -137px -82px;
+}
+
+.sprite-ico_youtube {
+    width: 56px;
+    height: 40px;
+    background-position: -167px 0;
+}
+
+.sprite-placeholder-letter {
+    width: 29px;
+    height: 29px;
+    background-position: -167px -40px;
+}
+
+.sprite-placeholder-name {
+    width: 29px;
+    height: 29px;
+    background-position: -167px -69px;
+}
+
+.sprite-placeholder-phone {
+    width: 29px;
+    height: 29px;
+    background-position: -163px -98px;
+}

@@ -1,1 +1,94 @@
-@import 'mixin/mixins', 'mixin/normalize';
+@import 'mixin/mixins', 'mixin/normalize', 'mixin/variables'
+
+@import 'bootstrap-grid.min.css', '../css/sprite'
+
+body
+	color: $dark
+	font-size: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+
+.row > div
+	box-sizing: border-box
+
+a, a:active
+	outline: none !important
+
+header
+	position: relative
+	padding: 0 2.5vw
+	background-image: url("../img/bg-header.jpg")
+	height: 910px
+	// background-image: url("../img/bg-header2.jpg")
+	// height: 860px;
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: bottom
+
+.img-responsive
+	max-width: 100%
+	height: auto
+
+.logo img
+	width: 100%
+	margin-top: 55px
+	max-width: 380px
+
+.menu,.contact-top-box
+	margin-top: 50px
+
+nav.menu
+	ul
+		margin-right: 50px
+	li
+		display: inline-block
+		margin-right: 5px
+		a
+			color: $dark
+			transition: all .3s ease
+			text-transform: uppercase
+			border: 2px solid transparent
+			margin: 1px 0
+			border-radius: 20px
+			padding: 10px 35px
+			font-weight: bold
+			font-size: 1.7em
+			text-decoration: none
+			display: block
+			&.active,&:hover
+				border-color: $dark
+
+.text-preview
+	position: absolute
+	top: 50%
+	transform: translateX(65%)
+
+	font-size: 42px
+	display: table
+	margin: 0 auto !important
+	color: transparent;
+	// -webkit-background-clip: text !important
+	// font-family: arial;
+	// font-weight: 700;
+	// background: url("../img/gradient.jpg")
+	@media screen and (max-width:767px)
+		// font-size: 20px !important
+
+.contact-top-box
+	padding: 5px 0
+	.phone-top
+		position: relative
+		color: $dark
+		text-decoration: none
+		font-size: 3em
+		font-weight: bold
+		&:before
+			@extend .sprite
+			@extend .sprite-ico_phone_red
+			content: ''
+			position: absolute
+			top: 10px
+			left: -50px
+	.if-quest-is-true
+		color: $grey
+		font-size: 22px
+		margin-left: 3px
