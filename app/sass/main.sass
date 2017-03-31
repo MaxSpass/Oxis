@@ -1,14 +1,20 @@
-@import 'mixin/mixins', 'mixin/normalize', 'mixin/variables'
+@import 'mixin/mixins', 'mixin/normalize', 'mixin/variables', '../css/sprite'
 
-@import 'bootstrap-grid.min.css', '../css/sprite'
+@import 'bootstrap-grid.min.css', 'animate.min.css'
 
 body
 	color: $dark
 	font-size: 100%;
 	font-family: Arial, Helvetica, sans-serif;
+	overflow-x: hidden
 
 .row > div
 	box-sizing: border-box
+
+.clearfix:after
+	content: "";
+	display: table;
+	clear: both;
 
 a, a:active
 	outline: none !important
@@ -17,12 +23,15 @@ header
 	position: relative
 	padding: 0 2.5vw
 	background-image: url("../img/bg-header.jpg")
-	height: 910px
+	height: 100vh
+	// box-shadow: 0 5px 5px rgba(0,0,0,.1);
 	// background-image: url("../img/bg-header2.jpg")
 	// height: 860px;
 	background-repeat: no-repeat
 	background-size: cover
 	background-position: bottom
+	@media screen and (max-width: 1199)
+		height: 910px
 
 .img-responsive
 	max-width: 100%
@@ -60,11 +69,14 @@ nav.menu
 .text-preview
 	position: absolute
 	top: 50%
-	transform: translateX(65%)
-
+	left: 0
+	right: 0
+	display: inline-block
+	text-align: center
+	// transform: translateX(65%)
+	animation-duration: 2s
 	font-size: 42px
-	display: table
-	margin: 0 auto !important
+	margin: 0 auto
 	color: transparent;
 	// -webkit-background-clip: text !important
 	// font-family: arial;
@@ -72,6 +84,37 @@ nav.menu
 	// background: url("../img/gradient.jpg")
 	@media screen and (max-width:767px)
 		// font-size: 20px !important
+
+.btn-go-box
+	@include absPosition(auto,0,10%,0)
+	margin: 0 auto
+	text-align: center
+	.btn-go
+		position: relative
+		background: transparent
+		transition: all .5s ease
+		border: none
+		padding: 0 20px
+		line-height: 55px
+		// height: 40px
+		color: $orange
+		font-size: 1.6em
+		font-size: bold
+		z-index: 1
+		&:hover
+			color: #fff
+			&:after
+				height: 100%
+		&:after
+			@include absPosition(auto,0,0,0)
+			transition: all .5s ease
+			// border-radius: 20px
+			content: ''
+			display: block
+			width: 100%
+			height: 5px
+			background-color: $orange
+			z-index: -1
 
 .contact-top-box
 	padding: 5px 0
@@ -82,8 +125,7 @@ nav.menu
 		font-size: 3em
 		font-weight: bold
 		&:before
-			@extend .sprite
-			@extend .sprite-ico_phone_red
+			@include sprite-ico_phone_red
 			content: ''
 			position: absolute
 			top: 10px
@@ -92,3 +134,216 @@ nav.menu
 		color: $grey
 		font-size: 22px
 		margin-left: 3px
+
+.services
+	@extend .clearfix
+	.serv-inner
+		padding: 3vw 8vw
+		padding-left: 10vw
+		&>[class^=col-]
+			&:nth-child(2) .serv-caption-box
+				animation-delay: .25s
+			&:nth-child(3) .serv-caption-box
+				animation-delay: .45s
+			&:nth-child(4) .serv-caption-box
+				animation-delay: .65s
+		.serv-caption-box
+			padding: 10px
+			max-width: 300px
+			margin: 0 auto
+			// &:nth-child(5)
+			// 	animation-delay: .8s
+			// &:nth-child(6)
+			// 	animation-delay: .95s
+			.img-caption
+				@extend .img-responsive
+			.h2-caption
+				font-size: 1.7em
+			@media screen and (max-width:767px)
+				.img-caption
+					display: block
+					margin: 0 auto
+				.h2-caption
+					text-align: center
+
+.our-services
+	height: 908px
+	background-image: url("../img/bg-center.jpg")
+	background-repeat: no-repeat
+	background-position: top right
+	@media screen and (max-width:767px)
+		background-size: cover
+		height: auto
+
+.serv-text-preview
+	color: $brown
+	// padding-left: 12vw
+	padding: 3vw 0 3vw 8vw
+	.h2-text-preview
+		font-size: 4.8em
+	.p-text-preview
+		letter-spacing: 2px
+		font-size: 3.75em
+
+.our-services-inner
+	// padding: 2.5vw 0 2.5vw 11.5vw
+	padding: 3vw 0 3vw 8vw
+	.serv-item 
+		box-sizing: border-box
+		max-width: 260px
+		margin-bottom: 30px
+		.serv-item-inner-img
+			display: table
+			margin-bottom: 10px
+			border: 3px solid #ffb500
+			border-radius: 50%
+			padding: 20px
+			img
+		p
+			color: $brown
+			font-size: 18px
+	&>[class^=col-]
+		&:nth-child(2) .serv-item
+			animation-delay: .25s
+		&:nth-child(3) .serv-item
+			animation-delay: .35s
+		&:nth-child(4) .serv-item
+			animation-delay: .45s
+		&:nth-child(5) .serv-item
+			animation-delay: .55s
+		&:nth-child(6) .serv-item
+			animation-delay: .65s
+	@media screen and (max-width:767px)
+		background: rgba(255,255,255,.9)
+		.serv-item
+			margin: 0 auto
+			img
+				display: block
+				margin: 0 auto
+				padding: 15px
+			p
+				text-align: center
+
+@keyframes impulse_btn
+	0%
+		border-color: lighten($orange, 38%)
+	50%
+		// border-color: transparent
+		border-color: lighten($orange, 30%)
+	100%
+		border-color: lighten($orange, 38%)
+
+.btn-go-services
+	position: relative
+	color: $brown
+	margin-top: 50px
+	padding: 15px
+	border-radius: 50px
+	box-sizing: border-box
+	display: table-cell
+	transition: all .4s ease-out
+	background-color: $orange
+	font-weight: 600
+	font-size: 1.5em
+	clear: both
+	&:before
+		@include absPosition(0,0,0,0)
+		content: ''
+		height: 100%
+		width: 100%
+		border: 10px solid transparent
+		display: block
+		transition: all 1s ease
+		border-radius: 50px
+		margin: -10px
+	&:hover
+		color: #fff
+		&:before
+			// border-color: lighten($orange, 30%)
+			animation: impulse_btn 1.5s infinite
+			animation-timing-function: ease-in
+
+.price
+	@extend .clearfix
+	padding: 20px 3vw
+	// float: left
+
+.price-desc
+	max-width: 900px
+	margin: 0 auto 30px auto
+	h2,p
+		text-align: center
+		line-height: 53px
+		font-size: 2em
+		text-transform: uppercase
+	p
+		letter-spacing: 1px
+		span.red
+			font-weight: bold
+			color: $red
+
+
+.price-box
+	.price-item
+		&:nth-child(2)
+			animation-delay: .1s
+		&:nth-child(3)
+			animation-delay: .2s
+		&:nth-child(4)
+			animation-delay: .3s
+		.price-item-inner
+			background-color: $light-grey
+			background-image: url("../img/price-item.png")
+			background-repeat: no-repeat
+			background-position: center top
+			cursor: pointer
+			// background: red
+			max-width: 411px
+			margin: 0 auto 20px auto
+			.price__top
+				position: relative
+				padding-top: 25px
+				margin-bottom: 50px
+				z-index: 2
+				h3,p
+					text-align: center
+					color: #fff
+				h3
+					font-size: 34px
+				p
+					font-size: 40px
+					font-weight: bold
+			.price__bottom
+				padding: 50px 0 20px 0
+				z-index: 1
+				span
+					display: block
+					text-align: center
+				.strike-price
+					color: #a7a7a7
+					text-decoration: line-through
+					font-size: 33px
+				.new-price
+					color: red
+					font-size: 45px
+					font-weight: bold
+				.btn-price
+					background-color: $red
+					background-image: url("../img/btn-bg.png")
+					padding: 
+					display: table
+					border-radius: 10px
+					color: #fff
+					padding: 10px 1.5em
+					margin: 20px auto 0 auto
+					font-size: 2.2em
+					font-weight: bold
+					box-shadow: 0 4px 0 darken($red,5%)
+					&:hover
+						background-color: lighten($red,10%)
+					&:active
+						box-shadow: 0 2px 0 darken($red,2%)
+			&:hover
+				background-image: url("../img/price-item-hover.png")
+				.price__top p
+					color: red

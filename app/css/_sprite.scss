@@ -1,100 +1,116 @@
-.sprite {
+@mixin sprite {
     background-image: url(../img/sprite.png);
     background-repeat: no-repeat;
     display: block;
 }
 
-.sprite-header_white {
+@mixin sprite-header_white {
+    @include sprite
     width: 26px;
     height: 26px;
     background-position: 0 0;
 }
 
-.sprite-heart_red {
+@mixin sprite-heart_red {
+    @include sprite
     width: 26px;
     height: 26px;
     background-position: -26px 0;
 }
 
-.sprite-ico_coffe {
+@mixin sprite-ico_coffe {
+    @include sprite
     width: 26px;
     height: 26px;
     background-position: -52px 0;
 }
 
-.sprite-ico_fb {
+@mixin sprite-ico_fb {
+    @include sprite
     width: 167px;
     height: 56px;
     background-position: 0 -26px;
 }
 
-.sprite-ico_google {
+@mixin sprite-ico_google {
+    @include sprite
     width: 56px;
     height: 40px;
     background-position: 0 -82px;
 }
 
-.sprite-ico_inst {
+@mixin sprite-ico_inst {
+    @include sprite
     width: 56px;
     height: 40px;
     background-position: -56px -82px;
 }
 
-.sprite-ico_kievstar {
+@mixin sprite-ico_kievstar {
+    @include sprite
     width: 20px;
     height: 20px;
     background-position: -78px 0;
 }
 
-.sprite-ico_life {
+@mixin sprite-ico_life {
+    @include sprite
     width: 20px;
     height: 20px;
     background-position: -98px 0;
 }
 
-.sprite-ico_music {
+@mixin sprite-ico_music {
+    @include sprite
     width: 26px;
     height: 26px;
     background-position: -118px 0;
 }
 
-.sprite-ico_phone_blue {
+@mixin sprite-ico_phone_blue {
+    @include sprite
     width: 20px;
     height: 20px;
     background-position: -144px 0;
 }
 
-.sprite-ico_phone_red {
+@mixin sprite-ico_phone_red {
+    @include sprite
     width: 25px;
     height: 25px;
     background-position: -112px -82px;
 }
 
-.sprite-ico_skype {
+@mixin sprite-ico_skype {
+    @include sprite
     width: 26px;
     height: 26px;
     background-position: -137px -82px;
 }
 
-.sprite-ico_youtube {
+@mixin sprite-ico_youtube {
+    @include sprite
     width: 56px;
     height: 40px;
     background-position: -167px 0;
 }
 
-.sprite-placeholder-letter {
+@mixin sprite-placeholder-letter {
+    @include sprite
     width: 29px;
     height: 29px;
     background-position: -167px -40px;
 }
 
-.sprite-placeholder-name {
+@mixin sprite-placeholder-name {
+    @include sprite
     width: 29px;
     height: 29px;
     background-position: -167px -69px;
 }
 
-.sprite-placeholder-phone {
+@mixin sprite-placeholder-phone {
+    @include sprite
     width: 29px;
     height: 29px;
     background-position: -163px -98px;
