@@ -1,6 +1,6 @@
-@import 'mixin/mixins', 'mixin/normalize', 'mixin/variables', '../css/sprite'
+@import 'mixin/mixins', 'mixin/normalize', 'mixin/variables', 'mixin/sprite'
 
-@import 'bootstrap-grid.min.css', 'animate.min.css'
+@import 'bootstrap-grid.min.css', 'animate.min.css', 'owl.carousel.css', 'owl.theme.css'
 
 body
 	color: $dark
@@ -36,6 +36,17 @@ header
 .img-responsive
 	max-width: 100%
 	height: auto
+
+.btn-style
+	display: table
+	background-color: $red
+	background-image: url("../img/btn-bg.png")
+	box-shadow: 0 4px 0 darken($red,5%)
+	border-radius: 10px
+	&:hover
+		background-color: lighten($red,10%)
+	&:active
+		box-shadow: 0 2px 0 darken($red,2%)
 
 .logo img
 	width: 100%
@@ -328,22 +339,147 @@ nav.menu
 					font-size: 45px
 					font-weight: bold
 				.btn-price
-					background-color: $red
-					background-image: url("../img/btn-bg.png")
-					padding: 
-					display: table
-					border-radius: 10px
+					@extend .btn-style
 					color: #fff
 					padding: 10px 1.5em
 					margin: 20px auto 0 auto
 					font-size: 2.2em
 					font-weight: bold
-					box-shadow: 0 4px 0 darken($red,5%)
-					&:hover
-						background-color: lighten($red,10%)
-					&:active
-						box-shadow: 0 2px 0 darken($red,2%)
 			&:hover
 				background-image: url("../img/price-item-hover.png")
 				.price__top p
 					color: red
+
+// Projects
+.portfolio
+	margin: 4vw auto
+	.h2-portfolio
+		text-align: center
+		font-size: 1.8em
+		font-weight: bold
+		margin-bottom: 50px
+
+.portfolio-item img
+	display: table
+	margin: 0 auto
+
+// Footer
+.form-box
+	@include absPosition(11%,0,auto,9%)
+	margin-top: 30px
+	z-index: 3
+	background: #fff
+	width: 100%
+	padding: 60px 30px 70px 30px
+	max-width: 570px
+	box-sizing: border-box
+	border-radius: 10px
+	// height: 750px
+	box-shadow: 0 0 50px rgba(255,255,255,1)
+	text-align: center
+	// &:after
+	// 	@include absPosition(0,0,0,0)
+	// 	content: ''
+	// 	border: 30px solid rgba(255,255,255,.5)
+	// 	border-radius: 10px
+	// 	margin: -15px
+	// 	z-index: -1
+	.h4-form
+		color: red
+		text-transform: uppercase
+		font-size: 2.3em
+	.p-form
+		color: $dark
+		text-transform: uppercase
+		line-height: 38px
+		font-size: 1.5em
+		font-weight: bold
+		margin-bottom: 30px
+	.main-form
+		input,textarea
+			line-height: 60px
+			color: #000
+			box-sizing: border-box
+			border: 1px solid $form-color
+			border-radius: 4px
+			width: 100%
+			margin-bottom: 25px
+			display: block
+			font-size: 1.5em
+		input
+			width: 100%
+			padding-left: 80px
+			padding-right: 20px
+			&:focus
+				border-color: lighten(red,30%)
+		label
+			width: 100%
+			display: block
+			position: relative
+			&:before
+				@include absPosition(50%,0,auto,25px)
+				margin-top: -14.5px
+				content: ''
+			&:after
+				@include absPosition(50%,15px,0,auto)
+				user-select: none
+				margin-top: -10px
+				font-size: 32px
+				content: '*'
+				color: #e4e4e4
+		label.ico-user
+			&:before
+				@include sprite-placeholder-name
+		label.ico-tel
+			&:before
+				@include sprite-placeholder-phone
+		label.ico-mail
+			&:before
+				@include sprite-placeholder-letter
+		.required-box
+			user-select: none
+			display: table
+			.required-text
+				color: red
+				line-height: 25px
+				font-size: 15px
+				&:before
+					content: '*\00a0'
+					font-size: 30px
+					vertical-align: text-top
+		.btn-form
+			@extend .btn-style
+			color: #fff
+			font-size: 2.3em
+			text-transform: uppercase
+			padding: 10px 20px
+			margin: 55px auto 0 auto
+			font-weight: bold
+			&:after
+				content: '\00a0→'
+
+.footer-box
+	position: relative
+	background-image: url("../img/bg-footer.jpg")
+	height: 1219px
+	// height: 1219px;
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: bottom
+	// background-attachment: fixed
+
+.footer-inner
+	@include absPosition(auto,0,0,0)
+	background: rgba(0,0,0,.4)
+	padding: 70px 0 30px 0
+
+.footer
+	color: #fff
+
+@media screen and (max-width:991px)
+	.footer-box
+		height: auto
+	.form-box, .footer-inner
+		position: static
+	.form-box
+		margin: 0 auto

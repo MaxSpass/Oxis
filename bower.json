@@ -19,6 +19,7 @@
     "jquery": "latest",
     "normalize.sass": "^3.0.0",
     "bootstrap-grid": "^3.3.6-beta.1",
-    "animate.css": "^3.5.2"
+    "animate.css": "^3.5.2",
+    "owl-carousel": "owlcarousel#^1.3.2"
   }
 }

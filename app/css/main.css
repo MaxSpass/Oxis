@@ -1,5 +1,8 @@
+@charset "UTF-8";
 @import url(bootstrap-grid.min.css);
 @import url(animate.min.css);
+@import url(owl.carousel.css);
+@import url(owl.theme.css);
 body {
   -webkit-text-size-adjust: none;
   -webkit-tap-highlight-color: transparent;
@@ -202,6 +205,20 @@ header {
 .img-responsive, .services .serv-inner .serv-caption-box .img-caption {
   max-width: 100%;
   height: auto; }
+
+.btn-style, .price-box .price-item .price-item-inner .price__bottom .btn-price, .form-box .main-form .btn-form {
+  display: table;
+  background-color: #E40005;
+  background-image: url("../img/btn-bg.png");
+  -webkit-box-shadow: 0 4px 0 #cb0004;
+          box-shadow: 0 4px 0 #cb0004;
+  -webkit-border-radius: 10px;
+          border-radius: 10px; }
+  .btn-style:hover, .price-box .price-item .price-item-inner .price__bottom .btn-price:hover, .form-box .main-form .btn-form:hover {
+    background-color: #ff181d; }
+  .btn-style:active, .price-box .price-item .price-item-inner .price__bottom .btn-price:active, .form-box .main-form .btn-form:active {
+    -webkit-box-shadow: 0 2px 0 #da0005;
+            box-shadow: 0 2px 0 #da0005; }
 
 .logo img {
   width: 100%;
@@ -519,24 +536,171 @@ nav.menu li {
       font-size: 45px;
       font-weight: bold; }
     .price-box .price-item .price-item-inner .price__bottom .btn-price {
-      background-color: #E40005;
-      background-image: url("../img/btn-bg.png");
-      display: table;
-      -webkit-border-radius: 10px;
-              border-radius: 10px;
       color: #fff;
       padding: 10px 1.5em;
       margin: 20px auto 0 auto;
       font-size: 2.2em;
-      font-weight: bold;
-      -webkit-box-shadow: 0 4px 0 #cb0004;
-              box-shadow: 0 4px 0 #cb0004; }
-      .price-box .price-item .price-item-inner .price__bottom .btn-price:hover {
-        background-color: #ff181d; }
-      .price-box .price-item .price-item-inner .price__bottom .btn-price:active {
-        -webkit-box-shadow: 0 2px 0 #da0005;
-                box-shadow: 0 2px 0 #da0005; }
+      font-weight: bold; }
   .price-box .price-item .price-item-inner:hover {
     background-image: url("../img/price-item-hover.png"); }
     .price-box .price-item .price-item-inner:hover .price__top p {
       color: red; }
+
+.portfolio {
+  margin: 4vw auto; }
+  .portfolio .h2-portfolio {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 50px; }
+
+.portfolio-item img {
+  display: table;
+  margin: 0 auto; }
+
+.form-box {
+  position: absolute;
+  top: 11%;
+  right: 0;
+  bottom: auto;
+  left: 9%;
+  margin-top: 30px;
+  z-index: 3;
+  background: #fff;
+  width: 100%;
+  padding: 60px 30px 70px 30px;
+  max-width: 570px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+  -webkit-box-shadow: 0 0 50px white;
+          box-shadow: 0 0 50px white;
+  text-align: center; }
+  .form-box .h4-form {
+    color: red;
+    text-transform: uppercase;
+    font-size: 2.3em; }
+  .form-box .p-form {
+    color: #262626;
+    text-transform: uppercase;
+    line-height: 38px;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 30px; }
+  .form-box .main-form input, .form-box .main-form textarea {
+    line-height: 60px;
+    color: #000;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border: 1px solid #b9b9b9;
+    -webkit-border-radius: 4px;
+            border-radius: 4px;
+    width: 100%;
+    margin-bottom: 25px;
+    display: block;
+    font-size: 1.5em; }
+  .form-box .main-form input {
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 20px; }
+    .form-box .main-form input:focus {
+      border-color: #ff9999; }
+  .form-box .main-form label {
+    width: 100%;
+    display: block;
+    position: relative; }
+    .form-box .main-form label:before {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      bottom: auto;
+      left: 25px;
+      margin-top: -14.5px;
+      content: ''; }
+    .form-box .main-form label:after {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      bottom: 0;
+      left: auto;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+      margin-top: -10px;
+      font-size: 32px;
+      content: '*';
+      color: #e4e4e4; }
+  .form-box .main-form label.ico-user:before {
+    background-image: url(../img/sprite.png);
+    background-repeat: no-repeat;
+    display: block;
+    width: 29px;
+    height: 29px;
+    background-position: -167px -69px; }
+  .form-box .main-form label.ico-tel:before {
+    background-image: url(../img/sprite.png);
+    background-repeat: no-repeat;
+    display: block;
+    width: 29px;
+    height: 29px;
+    background-position: -163px -98px; }
+  .form-box .main-form label.ico-mail:before {
+    background-image: url(../img/sprite.png);
+    background-repeat: no-repeat;
+    display: block;
+    width: 29px;
+    height: 29px;
+    background-position: -167px -40px; }
+  .form-box .main-form .required-box {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    display: table; }
+    .form-box .main-form .required-box .required-text {
+      color: red;
+      line-height: 25px;
+      font-size: 15px; }
+      .form-box .main-form .required-box .required-text:before {
+        content: '*\00a0';
+        font-size: 30px;
+        vertical-align: text-top; }
+  .form-box .main-form .btn-form {
+    color: #fff;
+    font-size: 2.3em;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    margin: 55px auto 0 auto;
+    font-weight: bold; }
+    .form-box .main-form .btn-form:after {
+      content: '\00a0→'; }
+
+.footer-box {
+  position: relative;
+  background-image: url("../img/bg-footer.jpg");
+  height: 1219px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom; }
+
+.footer-inner {
+  position: absolute;
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 70px 0 30px 0; }
+
+.footer {
+  color: #fff; }
+
+@media screen and (max-width: 991px) {
+  .footer-box {
+    height: auto; }
+  .form-box, .footer-inner {
+    position: static; }
+  .form-box {
+    margin: 0 auto; } }
