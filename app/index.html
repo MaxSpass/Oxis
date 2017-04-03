@@ -4,7 +4,7 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="css/main.css">
-<!--  <link rel="stylesheet" href="css/main.min.css"> -->
+      <!-- <link rel="stylesheet" href="css/main.min.css"> -->
       <title>Oxis</title>
       <!--[if IE]>-->
       <!-- <link rel="stylesheet" media="screen, projection" type="text/css" href="css/ie.css">
@@ -12,14 +12,15 @@
       <!--<![endif]-->
    </head>
    <body>
-      <header>
+      <header id="top">
          <div class="row">
-            <div class="col-xs-3">
+            <div class="col-xs-3 col-sm-3 col-md-2">
                <a href="/" class="logo">
                   <img src="img/logo.png" class="img-responsive" alt="">
                </a>
             </div>
-            <div class="col-xs-6">
+            <div class="col-xs-6 nop col-sm-9 col-md-6">
+               <div class="btn-mobile"></div>
                <nav class="menu pull-right">
                   <ul>
                      <li><a href="#services">Услуги</a></li>
@@ -29,12 +30,10 @@
                   </ul>
                </nav>
             </div>
-            <div class="col-xs-3">
+            <div class="col-xs-9 col-md-4">
                <div class="contact-top-box">
                   <a class="phone-top" href="tel:0800300997">0 800 300 997</a>
-                  <div class="if-quest-is-true">
-                     Есть вопросы - Звоните нам!
-                  </div>
+                  <div class="if-quest-is-true">Есть вопросы - Звоните нам!</div>
                </div>
             </div>
          </div>
@@ -77,9 +76,9 @@
                <h2 class="h2-text-preview">Наши услуги</h2>
                <p class="p-text-preview">Сотрудничая с нами, вы получаете</p>
             </div>
-            <div class="col-sm-12 col-md-5">
+            <div class="col-sm-12 col-md-12 col-lg-5">
                <div class="our-services-inner row">
-                  <div class="col-xs-6">
+                  <div class="col-xs-6 col-md-4 col-lg-6 nop">
                      <div class="serv-item">
                         <div class="serv-item-inner-img invisible">
                            <img src="img/serv05.png" alt="Качественный результат">
@@ -87,7 +86,7 @@
                         <p>Качественный результат</p>
                      </div>
                   </div>
-                  <div class="col-xs-6">
+                  <div class="col-xs-6 col-md-4 col-lg-6 nop">
                      <div class="serv-item">
                         <div class="serv-item-inner-img invisible">
                            <img src="img/serv06.png" alt="Современные идеи">
@@ -95,7 +94,7 @@
                         <p>Современные идеи</p>
                      </div>
                   </div>
-                  <div class="col-xs-6">
+                  <div class="col-xs-6 col-md-4 col-lg-6 nop">
                      <div class="serv-item">
                         <div class="serv-item-inner-img invisible">
                            <img src="img/serv07.png" alt="Экстренную постоянную техподдержку">
@@ -103,7 +102,7 @@
                         <p>Экстренную постоянную техподдержку</p>
                      </div>
                   </div>
-                  <div class="col-xs-6">
+                  <div class="col-xs-6 col-md-4 col-lg-6 nop">
                      <div class="serv-item">
                         <div class="serv-item-inner-img invisible">
                            <img src="img/serv08.png" alt="Доступные цены и кратие сроки на релиз">
@@ -111,7 +110,7 @@
                         <p>Доступные цены и кратие сроки на релиз</p>
                      </div>
                   </div>
-                  <div class="col-xs-6">
+                  <div class="col-xs-6 col-md-4 col-lg-6 nop">
                      <div class="serv-item">
                         <div class="serv-item-inner-img invisible">
                            <img src="img/serv09.png" alt="Разработки в перспективе. Думаем наперед">
@@ -119,7 +118,7 @@
                         <p>Разработки в перспективе. <br>Думаем наперед</p>
                      </div>
                   </div>
-                  <div class="col-xs-6">
+                  <div class="col-xs-6 col-md-4 col-lg-6 nop">
                      <div class="serv-item">
                         <div class="serv-item-inner-img invisible">
                            <img src="img/serv010.png" alt="Готовы к риску, росту и развитию">
@@ -217,6 +216,7 @@
 
       <div id="contact" class="footer-box">
          <div class="form-box invisible">
+            <div class="form-close">&times;</div>
             <h4 class="h4-form">Заполните бриф</h4>
             <p class="p-form">и мы обязательно с <br>вами свяжемся!</p>
             <form id="form" class="main-form" action="">
@@ -235,43 +235,42 @@
                <div class="row">
                   <div class="hidden-xs hidden-sm col-md-2">
                      <ul class="footer-inner-1">
-                        <li><a href="">Главная</a></li>
-                        <li><a href="">Услуги</a></li>
-                        <li><a href="">Цены</a></li>
-                        <li><a href="">Проекты</a></li>
-                        <li><a href="">Контакты</a></li>
+                        <li><a href="#top">Главная</a></li>
+                        <li><a href="#services">Услуги</a></li>
+                        <li><a href="#price">Цены</a></li>
+                        <li><a href="#portfolio">Проекты</a></li>
+                        <li><a href="#contact">Контакты</a></li>
                      </ul>
                   </div>
-                  <div class="col-xs-12 col-sm-4">
+                  <div class="col-md-4">
                      <div class="footer-inner-2">
-                        <ul>
+                        <ul class="mails-link">
                            <li><a href="mailto:infostudioOxis@gmail.com">infostudioOxis@gmail.com</a></li>
-                           <li><a href="skype:studioOxis">studioOxis</a></li>
+                           <li><a class="skype-link" href="skype:studioOxis">studioOxis</a></li>
                         </ul>
-                        <address>
+                        <address class="address">
                            <p>г.Днерп ул.Сечевых Cтрeльцов, 9а</p>
                         </address>
                      </div>
                   </div>
-                  <div class="col-xs-12 col-sm-3">
+                  <div class="col-md-3">
                      <ul class="footer-inner-3">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam saepe architecto fugiat dolores, unde atque ipsam. Delectus numquam exercitationem, eum molestias soluta ipsa dolore, temporibus saepe animi quam, excepturi vero.
-                        <li><a class="link-youtube" rel="nofollow" href=""></a></li>
-                        <li><a class="link-inst" rel="nofollow" href=""></a></li>
-                        <li><a class="link-google" rel="nofollow" href=""></a></li>
-                        <li><a class="link-fb" rel="nofollow" href=""></a></li>
+                        <li><a class="sprite-youtube" rel="nofollow" href=""></a></li>
+                        <li><a class="sprite-inst" rel="nofollow" href=""></a></li>
+                        <li><a class="sprite-google" rel="nofollow" href=""></a></li>
+                        <li><a class="sprite-fb" rel="nofollow" href=""></a></li>
                      </ul>
                   </div>
-                  <div class="col-xs-12 col-sm-3">
+                  <div class="col-md-3">
                      <ul class="footer-inner-4">
-                        <li><a href="tel:38096022231"></a>(096) 02 22 31</li>
-                        <li><a href="tel:096022231"></a>(096) 02 22 31</li>
-                        <li><a href="tel:096022231"></a>(096) 02 22 31</li>
+                        <li><a class="sprite-life" href="tel:38093022231">(093) 02 22 31</a></li>
+                        <li><a class="sprite-kiev" href="tel:096022231">(096) 02 22 31</a></li>
+                        <li><a class="sprite-phone" href="tel:0800022233">0 800 02 22 33</a></li>
                      </ul>
                      <div class="easter-zone">
                         <span class="easter-coffe"></span>
                         <span class="easter-music"></span>
-                        <span class="easter-heart"></span>
+                        <span class="easter-heart">&#10084;</span>
                      </div>
                   </div>
                </div>
@@ -280,10 +279,11 @@
       </div>
 
       <script src="js/jquery-3.1.1.min.js"></script>
-      <script src="js/pxgradient.min.js"></script>
+<!--  <script src="js/pxgradient.min.js"></script>
       <script src="js/viewportcheker.js"></script>
       <script src="js/owl.carousel.min.js"></script>
-      <script src="js/maskedinput.min.js"></script>
+      <script src="js/maskedinput.min.js"></script> -->
+      <script src="js/libs.min.js"></script>
       <script src="js/common.js"></script>
    </body>
 </html>

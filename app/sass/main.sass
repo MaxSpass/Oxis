@@ -2,27 +2,52 @@
 
 @import 'bootstrap-grid.min.css', 'animate.min.css', 'owl.carousel.css', 'owl.theme.css'
 
+// body,html
+// 	height: 100%
+
 body
 	color: $dark
 	font-size: 100%;
 	font-family: Arial, Helvetica, sans-serif;
 	overflow-x: hidden
+	&.overflow-hidden
+		overflow: hidden
+	&.shadow:after
+		position: fixed
+		content: ''
+		top: 0
+		left: 0
+		right: 0
+		width: 100%
+		height: 100%
+		background: #dcdcdc
+		z-index: 700
 
 .row > div
 	box-sizing: border-box
 
-.clearfix:after
-	content: "";
-	display: table;
-	clear: both;
+.nop
+	padding: 0 !important
+
+.clearfix
+	clear: both
+	&:after
+		content: ""
+		display: table
+		clear: both
+
+.invisible
+	@media screen and (max-width:767px)
+		visibility: visible !important
 
 a, a:active
 	outline: none !important
 
 header
 	position: relative
-	padding: 0 2.5vw
-	background-image: url("../img/bg-header.jpg")
+	padding: 0 2.5%
+	// background-image: url("../img/bg-header.jpg")
+	background-image: url("../img/bg-header2.jpg")
 	height: 100vh
 	// box-shadow: 0 5px 5px rgba(0,0,0,.1);
 	// background-image: url("../img/bg-header2.jpg")
@@ -30,8 +55,17 @@ header
 	background-repeat: no-repeat
 	background-size: cover
 	background-position: bottom
-	@media screen and (max-width: 1199)
-		height: 910px
+	@media (min-width: 1200px) and (max-width: 1500px)
+		font-size: 80%
+	@media screen and (max-width: 1199px)
+		height: 600px
+		font-size: 80%
+		nav.menu li a
+			padding: 10px
+	// @media screen and (max-width: 991px)
+		// font-size: 75%
+	@media screen and (max-width:767px)
+		height: 400px
 
 .img-responsive
 	max-width: 100%
@@ -50,67 +84,133 @@ header
 
 .logo img
 	width: 100%
-	margin-top: 55px
-	max-width: 380px
+	margin-top: 25px
+	max-width: 335px
+	@media screen and (max-width: 767px)
+		max-width: 200px
 
 .menu,.contact-top-box
 	margin-top: 50px
 
+.btn-mobile
+	position: fixed
+	top: 20px
+	right: 30px
+	cursor: pointer
+	width: 40px
+	height: 40px
+	background: $orange
+	z-index: 999
+	&.active
+		background: $brown
+	@media screen and (min-width: 768px)
+		display: none
+
 nav.menu
-	ul
-		margin-right: 50px
-	li
-		display: inline-block
-		margin-right: 5px
-		a
-			color: $dark
-			transition: all .3s ease
-			text-transform: uppercase
-			border: 2px solid transparent
-			margin: 1px 0
-			border-radius: 20px
-			padding: 10px 35px
-			font-weight: bold
-			font-size: 1.7em
-			text-decoration: none
-			display: block
-			&.active,&:hover
-				border-color: $dark
+	// ul
+	// 	display: flex
+	// 	flex-flow: row wrap
+	// 	justify-content: left
+	// 	align-self: center
+	li a
+		color: $dark
+		text-decoration: none
+		display: block
+		font-weight: bold
+
+nav.menu
+	@media screen and (min-width: 768px)
+		li
+			display: inline-block
+			margin-right: 5px
+			a
+				transition: all .25s ease
+				text-transform: uppercase
+				margin: 1px 0
+				border-radius: 20px
+				padding: 10px 25px
+				font-size: 1.3em
+				border: 2px solid transparent
+				&.active,&:hover
+					border-color: $dark
+
+	@media screen and (max-width: 767px)
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		margin-top: 0
+		transition: all .4s ease-in
+		background: rgba(255,255,255,.9)
+		width: 100%
+		height: 100%
+		transform: translate(-100%, 0)
+		z-index: 998
+		padding-top: 70px
+		li
+			a
+				font-size: 20px
+				text-align: center
+				display: table
+				margin: 5px auto
+				&.active,&:hover
+					background: $dark
+					color: #fff
+		&.show
+			transform: translate(0, 0)
+		
 
 .text-preview
 	position: absolute
-	top: 50%
+	top: 40%
 	left: 0
 	right: 0
 	display: inline-block
 	text-align: center
 	// transform: translateX(65%)
 	animation-duration: 2s
-	font-size: 42px
+	font-size: 3.4em
 	margin: 0 auto
 	color: transparent;
-	// -webkit-background-clip: text !important
-	// font-family: arial;
-	// font-weight: 700;
-	// background: url("../img/gradient.jpg")
-	@media screen and (max-width:767px)
-		// font-size: 20px !important
-
+	-webkit-background-clip: text !important
+	font-family: arial;
+	font-weight: 700;
+	background: url("../img/gradient.jpg")
+	background-size: contain
+	background-repeat: no-repeat
+	width: inherit
+	background-position: center
+	@media (min-width: 768px) and (max-width:1000px)
+		font-size: 3em
+	@media screen and (max-width: 767px)
+		font-size: 1.7em
+	@media screen and (max-width: 500px)
+		font-size: 1.2em
+	// h1
+	// 	&:after
+	// 		content: ''
+	// 		@include absPosition(auto,auto,0,0)
+	// 		transition: all 5s linear
+	// 		width: 0
+	// 		height: 2px
+	// 		background: $red
+	// 	&:hover:after
+	// 		width: 100%
 .btn-go-box
-	@include absPosition(auto,0,10%,0)
+	@include absPosition(auto,0,15%,0)
 	margin: 0 auto
 	text-align: center
 	.btn-go
 		position: relative
 		background: transparent
-		transition: all .5s ease
+		transition: all .5s ease-in
 		border: none
 		padding: 0 20px
 		line-height: 55px
 		// height: 40px
 		color: $orange
-		font-size: 1.6em
-		font-size: bold
+		font-size: 1.65em
+		font-weight: bold
 		z-index: 1
 		&:hover
 			color: #fff
@@ -128,12 +228,28 @@ nav.menu
 			z-index: -1
 
 .contact-top-box
+	margin-left: 50px
 	padding: 5px 0
+	@media (min-width:768px) and (max-width:991px)
+		margin-top: 10px
+		display: table
+		float: right
+	@media (min-width: 501px) and (max-width: 767px)
+		margin-right: 50px
+		float: right
+	@media screen and (max-width: 500px)
+		margin-top: 30px
+		margin-left: 40px
+		font-size: 92%
+		.phone-top:before
+			left: -30px !important
+	@media screen and (max-width: 400px)
+		margin-left: 10px 
 	.phone-top
 		position: relative
 		color: $dark
 		text-decoration: none
-		font-size: 3em
+		font-size: 2.5em
 		font-weight: bold
 		&:before
 			@include sprite-ico_phone_red
@@ -143,14 +259,14 @@ nav.menu
 			left: -50px
 	.if-quest-is-true
 		color: $grey
-		font-size: 22px
+		font-size: 1.2em
 		margin-left: 3px
 
 .services
 	@extend .clearfix
 	.serv-inner
-		padding: 3vw 8vw
-		padding-left: 10vw
+		padding: 3% 5%
+		// padding-left: 10%
 		&>[class^=col-]
 			&:nth-child(2) .serv-caption-box
 				animation-delay: .25s
@@ -170,41 +286,55 @@ nav.menu
 				@extend .img-responsive
 			.h2-caption
 				font-size: 1.7em
+				word-wrap: normal
+			@media screen and (max-width: 991px)
+				.h2-caption
+					font-size: 1em
 			@media screen and (max-width:767px)
 				.img-caption
 					display: block
 					margin: 0 auto
 				.h2-caption
 					text-align: center
+					
+
 
 .our-services
-	height: 908px
 	background-image: url("../img/bg-center.jpg")
 	background-repeat: no-repeat
 	background-position: top right
+	@media screen and (min-width: 1199px)
+		height: 908px
 	@media screen and (max-width:767px)
 		background-size: cover
 		height: auto
 
 .serv-text-preview
 	color: $brown
-	// padding-left: 12vw
-	padding: 3vw 0 3vw 8vw
+	// padding-left: 12%
+	padding: 0 0 3% 8%
 	.h2-text-preview
-		font-size: 4.8em
+		font-size: 4.4em;
+		line-height: 50px;
+		margin-bottom: 10px;
 	.p-text-preview
 		letter-spacing: 2px
-		font-size: 3.75em
+		font-size: 3.3em
+	@media screen and (max-width: 991px)
+		font-size: 70%
+	@media screen and (max-width: 767px)
+		font-size: 55%
 
 .our-services-inner
-	// padding: 2.5vw 0 2.5vw 11.5vw
-	padding: 3vw 0 3vw 8vw
+	// padding: 2.5% 0 2.5% 11.5%
+	padding: 1.7% 0 3% 8vw
 	.serv-item 
 		box-sizing: border-box
 		max-width: 260px
 		margin-bottom: 30px
 		.serv-item-inner-img
 			display: table
+			box-sizing: border-box
 			margin-bottom: 10px
 			border: 3px solid #ffb500
 			border-radius: 50%
@@ -224,16 +354,28 @@ nav.menu
 			animation-delay: .55s
 		&:nth-child(6) .serv-item
 			animation-delay: .65s
-	@media screen and (max-width:767px)
-		background: rgba(255,255,255,.9)
+
+@media screen and (max-width: 1199px)
+	.our-services
+		background-image: none !important
+
+@media screen and (max-width:767px)
+	.our-services-inner
+		padding: 10px
+
+	.our-services
+		// background: rgba(255,255,255,.9)
 		.serv-item
-			margin: 0 auto
-			img
-				display: block
-				margin: 0 auto
-				padding: 15px
+			margin-bottom: 30px
+			.serv-item-inner-img
+				margin: 0 auto 15px auto
+				padding: 10px
+				img
+					display: block
+					// padding: 5px !important
 			p
 				text-align: center
+				font-size: 15px
 
 @keyframes impulse_btn
 	0%
@@ -248,15 +390,18 @@ nav.menu
 	position: relative
 	color: $brown
 	margin-top: 50px
-	padding: 15px
+	padding: 15px 20px
 	border-radius: 50px
 	box-sizing: border-box
 	display: table-cell
 	transition: all .4s ease-out
 	background-color: $orange
 	font-weight: 600
-	font-size: 1.5em
+	font-size: 1.35em
 	clear: both
+	@media screen and (max-width: 767px)
+		margin: 0 auto
+		display: table
 	&:before
 		@include absPosition(0,0,0,0)
 		content: ''
@@ -276,7 +421,7 @@ nav.menu
 
 .price
 	@extend .clearfix
-	padding: 20px 3vw
+	padding: 20px 3%
 	// float: left
 
 .price-desc
@@ -292,10 +437,18 @@ nav.menu
 		span.red
 			font-weight: bold
 			color: $red
+	@media screen and (max-width: 767px)
+		font-size: 65%
+		h2,p
+			line-height: 33px
 
 
 .price-box
 	.price-item
+		@media (min-width: 1200px) and (max-width: 1500px)
+			font-size: 80%
+		@media screen and (max-width: 767px)
+			font-size: 75%
 		&:nth-child(2)
 			animation-delay: .1s
 		&:nth-child(3)
@@ -320,9 +473,9 @@ nav.menu
 					text-align: center
 					color: #fff
 				h3
-					font-size: 34px
+					font-size: 2.2em
 				p
-					font-size: 40px
+					font-size: 2.6em
 					font-weight: bold
 			.price__bottom
 				padding: 50px 0 20px 0
@@ -333,10 +486,10 @@ nav.menu
 				.strike-price
 					color: #a7a7a7
 					text-decoration: line-through
-					font-size: 33px
+					font-size: 2em
 				.new-price
 					color: red
-					font-size: 45px
+					font-size: 2.6em
 					font-weight: bold
 				.btn-price
 					@extend .btn-style
@@ -352,20 +505,49 @@ nav.menu
 
 // Projects
 .portfolio
-	margin: 4vw auto
+	margin: 4% auto
 	.h2-portfolio
 		text-align: center
 		font-size: 1.8em
 		font-weight: bold
 		margin-bottom: 50px
 
+.portfolio-list
+	position: relative
+	.owl-controls
+		@include absPosition(20px,0,0,0)
+		// display: inline-block
+		.owl-prev, .owl-next
+			background-color: transparent !important
+			position: absolute
+		.owl-prev
+			left: -75px
+		.owl-next
+			right: -75px
+	.carouselPrev, .carouselNext
+		@include carousel_arrow
+	.carouselPrev
+		transform: rotate(180deg)
+		left: -100px
+	@media screen and (min-width: 992px)
+		.owl-pagination
+			display: none
+
+@media screen and (max-width:991px)
+	.portfolio-list
+		.owl-controls
+			position: static
+		.owl-buttons
+			display: none
+
+
 .portfolio-item img
 	display: table
 	margin: 0 auto
 
-// Footer
+// Footer-form
 .form-box
-	@include absPosition(11%,0,auto,9%)
+	@include absPosition(11%,0,auto,11%)
 	margin-top: 30px
 	z-index: 3
 	background: #fff
@@ -374,16 +556,29 @@ nav.menu
 	max-width: 570px
 	box-sizing: border-box
 	border-radius: 10px
+	@media screen and (max-width: 767px)
+		font-size: 80%
+	.form-close
+		@include absPosition(20px,auto,auto,20px)
+		user-select: none
+		display: none
+		font-size: 40px
+		cursor: pointer
+		transition: all .3s linear
+		&:hover
+			transform: rotate(360deg)
 	// height: 750px
-	box-shadow: 0 0 50px rgba(255,255,255,1)
+
+	// box-shadow: 0 0 50px rgba(255,255,255,1)
+
 	text-align: center
-	// &:after
-	// 	@include absPosition(0,0,0,0)
-	// 	content: ''
-	// 	border: 30px solid rgba(255,255,255,.5)
-	// 	border-radius: 10px
-	// 	margin: -15px
-	// 	z-index: -1
+	&:after
+		@include absPosition(0,0,0,0)
+		content: ''
+		border: 30px solid rgba(255,255,255,.5)
+		border-radius: 10px
+		margin: -15px
+		z-index: -1
 	.h4-form
 		color: red
 		text-transform: uppercase
@@ -398,6 +593,7 @@ nav.menu
 	.main-form
 		input,textarea
 			line-height: 60px
+			height: 60px
 			color: #000
 			box-sizing: border-box
 			border: 1px solid $form-color
@@ -455,8 +651,36 @@ nav.menu
 			padding: 10px 20px
 			margin: 55px auto 0 auto
 			font-weight: bold
+			@media screen and (max-width: 767px)
+				font-size: 1.6em
 			&:after
 				content: '\00a0→'
+	&.modal
+		position: fixed
+		top: 5%
+		left: 0
+		right: 0
+		border-radius: 0
+		box-shadow: 0 0 20px rgba(0,0,0,.7);
+		visibility: visible !important
+		display: table-cell
+		margin: 0 auto
+		z-index: 701
+		@media screen and (max-width:991px)
+			@include absPosition(5%,0,0,0)
+			top: 20px
+			padding: 30px
+			.p-form
+				margin-bottom: 5px
+				line-height: 28px
+			input
+				line-height: 40px
+				height: 40px
+				margin-bottom: 10px
+			.btn-form
+				margin-top: 20px
+		.form-close
+			display: table !important
 
 .footer-box
 	position: relative
@@ -482,4 +706,138 @@ nav.menu
 	.form-box, .footer-inner
 		position: static
 	.form-box
-		margin: 0 auto
+		margin: 25px auto
+
+// Footer
+.footer-inner-1
+	li
+		line-height: 28px
+		a
+			position: relative
+			color: #fff
+			text-decoration: none
+			font-size: 20px
+			&:before
+				@include absPosition(auto,0,0,0)
+				content: ''
+				margin: 0 auto
+				width: 0%
+				height: 1px
+				background: #fff
+				transition: all .2s ease-out
+			&:hover
+				&:before
+					width: 100%
+
+.footer-inner-2
+	.mails-link
+		line-height: 26px
+		padding-left: 35px
+		a
+			position: relative
+			color: #fff
+			font-size: 17px
+			text-decoration: none
+			&:hover
+				text-decoration: underline
+		a.skype-link:before
+			@include absPosition(50%,auto,0,-35px)
+			@include sprite-ico_skype
+			margin-top: -13px
+			content: ''
+			float: left
+	.address
+		margin-top: 15px
+		font-style: normal 
+		font-size: 19px
+
+.footer-inner-3
+	max-width: 185px
+	display: table
+	li
+		display: inline-block
+		.sprite-youtube
+			@include sprite-ico_youtube
+		.sprite-inst
+			@include sprite-ico_inst
+		.sprite-google
+			@include sprite-ico_google
+		.sprite-fb
+			margin-top: 15px
+			@include sprite-ico_fb
+
+.footer-inner-4
+	// display: flex
+	// flex-flow: column nowrap
+	// justify-content: flex-end
+
+.footer-inner-4
+	float: right
+	clear: both
+	@extend .clearfix
+	li
+		line-height: 32px
+		a
+			position: relative
+			color: #fff
+			text-decoration: none
+			font-size: 26px
+			font-weight: bold
+			&:before
+				content: ''
+				@include absPosition(50%,-20px,0,-35px)
+				margin-top: -10px
+				float: left
+			&:hover
+				text-decoration: underline
+		.sprite-life:before
+			@include sprite-ico_life
+		.sprite-kiev:before
+			@include sprite-ico_kievstar
+		.sprite-phone:before
+			@include sprite-ico_phone_blue
+
+@keyframes heartbeating
+	0%
+		color: $red
+	50%
+		color: lighten($red,30%)
+	100%
+		color: $red
+
+.easter-zone
+	float: right
+	clear: both
+	@extend .clearfix
+	margin-top: 10px
+	span
+		display: inline-block
+		float: left
+		&:before,&:after
+			line-height: 38px
+	.easter-coffe
+		&:after
+			content: ''
+			@include sprite-ico_coffe
+			float: right
+		&:before
+			content: 'сделано с '
+	.easter-music
+		&:before
+			content: ''
+			@include sprite-ico_music
+			float: left
+		&:after
+			content: '\00a0и\00a0'
+			float: right
+	.easter-heart
+		font-size: 22px
+		color: $red
+		animation: heartbeating 2s infinite ease
+
+@media screen and (max-width:991px)
+	.footer-inner-1,.footer-inner-2,.footer-inner-3,.footer-inner-4, .easter-zone
+		display: table
+		margin: 15px auto
+	.footer-inner-4, .easter-zone
+		float: none

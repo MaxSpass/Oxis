@@ -4,20 +4,21 @@
     display: block;
 }
 
-@mixin carousel_arrow {
+@mixin carousel_prev {
     @include sprite
-    width: 100px;
-    height: 145px;
-    background-position: 30px -125px;
+    width: 26px;
+    height: 26px;
+    background-position: 0 0;
+    background: red !important;
 }
 
-// @mixin carousel_arrow_small {
-//     @include sprite
-//     width: 82px;
-//     height: 110px;
-//     background-position: 30px -125px;
-// }
-
+@mixin carousel_next {
+    @include sprite
+    width: 26px;
+    height: 26px;
+    background-position: 0 0;
+    background: green !important;
+}
 
 @mixin sprite-header_white {
     @include sprite
